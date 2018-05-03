@@ -1,6 +1,0 @@
-1.1.0
-=====
-* Ajout des notifications
-* Correction du footer
-* Correction de l'auteur dans les pages personnalisées
-* Modification du fichier css principal: utiliser le second fichier pour ajouter du css personnalisé.
