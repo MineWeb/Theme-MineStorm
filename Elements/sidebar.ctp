@@ -29,7 +29,7 @@
       </div>
     </div>
     <!-- Vote -->
-    <?php if(isset($theme_config['sidebar-vote']) && $theme_config['sidebar-vote'] && $EyPlugin->isInstalled('eywek.vote.3')){ ?>
+    <?php if(isset($theme_config['sidebar-vote']) && $theme_config['sidebar-vote'] && $EyPlugin->isInstalled('eywek.vote')){ ?>
       <div class="panel panel-default">
         <div class="panel-heading"><?= $Lang->get('VOTE__TITLE') ?></div>
         <div class="panel-body">

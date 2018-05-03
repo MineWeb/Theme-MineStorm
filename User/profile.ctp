@@ -29,7 +29,7 @@
 					  </div>
 						<div class="col-md-6">
 							<!-- Boutique -->
-							<?php if($EyPlugin->isInstalled('eywek.shop.1')) { ?>
+							<?php if($EyPlugin->isInstalled('eywek.shop')) { ?>
 							<div class="col-md-6">
 								<div class="panel panel-default">
 									<div class="panel-heading">Boutique</div>
@@ -38,7 +38,7 @@
 							</div>
 							<?php } ?>
 							<!-- Vote -->
-							<?php if($EyPlugin->isInstalled('eywek.vote.3')) { ?>
+							<?php if($EyPlugin->isInstalled('eywek.vote')) { ?>
 							<div class="col-md-6">
 								<div class="panel panel-default">
 								<div class="panel-heading">Votes</div>

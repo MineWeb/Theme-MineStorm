@@ -23,7 +23,7 @@ if(isset($config['logo']) && $config['logo']) {
 
             <div class="col-md-8">
 
-              <?php if($EyPlugin->isInstalled('eywek.vote.3')){ ?>
+              <?php if($EyPlugin->isInstalled('eywek.vote')){ ?>
               <!-- Panel Vote sidebar -->
               <div class="form-group">
                 <div class="checkbox">
