@@ -14,7 +14,7 @@
     <?= $this->Html->css('bootstrap.css') ?>
     <?= $this->Html->css('minestorm.css') ?>
     <?= $this->Html->css('swiper.min.css') ?>
-	  <?= $this->Html->css('/css/font-awesome.min.css') ?>
+    <?= $this->Html->css('/css/font-awesome.min.css') ?>
     
     <!-- CSS Config -->
     <?php if (isset($theme_config['theme']) && $theme_config['theme'] != "")
