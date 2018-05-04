@@ -19,7 +19,7 @@
       "eywek.factionranking":">=0.2.1",
       "vavaballz.myfaq":">=1.0.0",
       "empiredev.listmembers":">=1.1.2"
-      "phpierre.forum.":">=1.1.6"
+      "phpierre.forum":">=1.1.6"
    },
    "slider":true
 }
