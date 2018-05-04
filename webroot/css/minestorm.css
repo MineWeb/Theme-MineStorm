@@ -910,3 +910,25 @@ footer {
 		font-size:20px;
 	}
 }
+
+/*
+	Style for forum plugin
+ */
+
+.forum-forum-header{
+	background-color: #f39c12 !important;
+}
+
+.forum-forum-title > span, .forum-category-fa-min, .forum-forum-title{
+	color: #ffffff !important;
+	font-weight: bold;
+}
+
+.forum-description{
+	color: #ffffff !important;
+	font-weight: bold;
+}
+
+.forum-category-title > a, .forum-category-last > a:first-child, .forum-other-header > p{
+	color: #f39c12 !important;
+}
