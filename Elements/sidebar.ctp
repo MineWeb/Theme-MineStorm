@@ -11,7 +11,7 @@
             <center>
             <?php if(isset($theme_config['ip']) && $theme_config['ip'] != "") echo $theme_config['ip']; ?><hr>
             <div class="progress">
-              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?= $server_infos['getPlayerCount'] / $server_infos['getPlayerMax'] * 100 ?>%;">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?= $server_infos['GET_PLAYER_COUNT'] / ($server_infos['GET_MAX_PLAYERS']+1) * 100 ?>%;">
               </div>
             </div>
               <i class="fa fa-signal" aria-hidden="true"></i> <?= $server_infos['GET_PLAYER_COUNT'] ?> / <?= $server_infos['GET_MAX_PLAYERS'] ?> joueurs connectés
