@@ -6,6 +6,9 @@
     <div class="panel panel-default">
         <div class="panel-heading"><?= $v['News']['title']; ?><span class="pull-right"><small>Le <?= $Lang->date($v['News']['created']); ?></small></span></div>
         <div class="panel-body">
+            <?php if(!empty($v['News']['img'])): ?>
+                <img src="<?= $v['News']['img']; ?>" class="img-responsive" />
+            <?php endif; ?>
             <?php
                 $msg = strip_tags($v['News']['content']);
                 $msg = substr($msg, 0, 250);
