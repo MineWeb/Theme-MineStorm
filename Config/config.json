@@ -2,22 +2,16 @@
    "name":"MineStorm",
    "slug":"MineStorm",
    "author":"Narty",
-   "version":"1.0.7",
+   "version":"1.0.8",
    "apiID":-1,
    "configurations":{
       "sidebar-vote":"true",
       "status":"true",
       "ip":"play.minestorm.fr",
       "img_fond":"https://www.leviathyn.com/wp-content/uploads/2013/03/minecraft2_screenshot.jpg",
-      "favicon_url":"",
+      "favicon_url":"https://mineweb.org/assets/favicon.png",
       "logo":false
    },
-   "supported":{
-      "eywek.shop":">=0.4.0",
-      "eywek.support":">=0.2.0",
-      "eywek.vote":">=0.7.0",
-      "eywek.factionranking":">=0.2.1",
-      "vavaballz.myfaq":">=1.0.0"
-   },
+   "supported":{},
    "slider":true
 }
