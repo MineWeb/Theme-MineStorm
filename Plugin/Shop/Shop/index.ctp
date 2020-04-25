@@ -47,7 +47,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">Mon compte</div>
       <div class="panel-body">
-        <?= $Lang->get('SHOP__MONEY_CURRENTLY') ?>: <?= $money ?> <?= $Configuration->getMoneyName(); ?>
+        <?= $Lang->get('SHOP__MONEY_CURRENTLY') ?>: <?= $money; ?>
         <?php if($Permissions->can('CREDIT_ACCOUNT')){ ?>
           <hr>
           <a href="#" data-toggle="modal" data-target="#addmoney" class="btn-blue"><?= $Lang->get('SHOP__ADD_MONEY') ?></a>
