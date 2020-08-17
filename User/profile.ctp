@@ -48,6 +48,41 @@
 							<?php } ?>
 						</div>
 						<div class="col-md-12">
+						<h3 class="title-profile"><?= $Lang->get('USER__LOGIN_CODE_PLACEHOLDER') ?></h3>
+
+						<div class="callout text-center" id="twoFactorAuthStatus">
+							<div class="row">
+								<div class="col-md-12 col-sm-12">
+								<?php if(isset($twoFactorAuthStatus) && $twoFactorAuthStatus): ?>
+									<a id="toggleTwoFactorAuth" data-status="1" class="btn btn-danger">Voulez-vous <span id="twoFactorAuthStatusInfos">désactiver</span> la double authentification ?</a>
+								<?php else: ?>
+									<a id="toggleTwoFactorAuth" data-status="0" class="btn btn-info">Voulez-vous <span id="twoFactorAuthStatusInfos">activer</span> la double authentification ?</a>
+								<?php endif; ?>
+								</div>
+							</div>
+						</div>
+						<div id="twoFactorAuthValid" class="text-center" style="display: none;">
+							<img src="" id="two-factor-auth-qrcode" alt="" />
+							<p>
+								<small class="text-muted">Secret : <em id="two-factor-auth-secret"></em></small>
+							</p>
+
+							<form class="form-horizontal" method="POST" data-ajax="true" action="<?= $this->Html->url(array('admin' => false, 'controller' => 'Authentification', 'action' => 'validEnable')) ?>" data-callback-function="afterValidQrCode">
+								<div class="ajax-msg"></div>
+
+								<div class="form-group text-center">
+									<label><?= $Lang->get('USER__LOGIN_CODE') ?></label>
+									<div class="col-md-6" style="margin: 0 auto;float: none;">
+										<input type="text" class="form-control" name="code" placeholder="<?= $Lang->get('USER__LOGIN_CODE_PLACEHOLDER') ?>">
+									</div>
+								</div>
+
+								<button type="submit" class="btn btn-info"><?= $Lang->get('USER__VALID_CODE') ?></button>
+							</form>
+						</div>
+
+						<hr>
+
 						<h3 class="title-profile"><?= $Lang->get('USER__UPDATE_PASSWORD') ?></h3>
 
 						<form method="post" data-ajax="true" action="<?= $this->Html->url(array('plugin' => null, 'controller' => 'user', 'action' => 'change_pw')) ?>">
@@ -210,6 +245,34 @@
 	</div>
 </div>
 <script type="text/javascript">
+	$('#toggleTwoFactorAuth').on('click', function (event) {
+		event.preventDefault();
+
+		const status = parseInt($(this).attr('data-status'));
+		$(this).html('<i class="fa fa-refresh fa-spin"></i>').addClass('disabled');
+
+		if (!status) {
+			$.get('<?= $this->Html->url(array('controller' => 'Authentification', 'action' => 'generateSecret')) ?>', function (data) {
+				$('#two-factor-auth-qrcode').attr('src', data.qrcode_url);
+				$('#two-factor-auth-secret').html(data.secret);
+				$('#twoFactorAuthStatus').slideUp(150);
+				$('#twoFactorAuthValid').slideDown(150);
+			});
+		} else {
+			$.get('<?= $this->Html->url(array('controller' => 'Authentification', 'action' => 'disable')) ?>', function (data) {
+				$('#toggleTwoFactorAuth').html('Voulez-vous activer la double authentification ?').removeClass('disabled').removeClass('btn-danger').addClass('btn-info').attr('data-status', 0);
+				$('#twoFactorAuthStatusInfos').html('activer');
+			});
+		}
+	});
+
+	function afterValidQrCode(req, res) {
+		$('#toggleTwoFactorAuth').html('Voulez-vous désactiver la double authentification ?').removeClass('disabled').removeClass('btn-info').addClass('btn-danger').attr('data-status', 1);
+		$('#twoFactorAuthStatusInfos').html('désactiver');
+		$('#twoFactorAuthValid').slideUp(150);
+		$('#twoFactorAuthStatus').slideDown(150);
+	};
+				
 	<?php if($Configuration->getKey('mineguard') == "true") { ?>
 
 		function enableMineGuard() {
