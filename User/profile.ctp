@@ -1,7 +1,9 @@
 <div class="col-md-12">
 	<div class="panel panel-default">
-	<div class="panel-heading"> <img src="<?= $this->Html->url(array('controller' => 'API', 'action' => 'get_head_skin/', 'plugin' => false)) ?>/<?= $user['pseudo'] ?>/16" title="<?= $user['pseudo'] ?>">
-</div>
+		<div class="panel-heading"> 
+			<img class="align-middle" src="<?= $this->Html->url(array('controller' => 'API', 'action' => 'get_head_skin/', 'plugin' => false)) ?>/<?= $user['pseudo'] ?>/22" title="<?= $user['pseudo'] ?>" />
+			<?= $user['pseudo']; ?>
+		</div>
 		<div class="panel-body">
 			<div class="col-md-12">
 					<div class="panel-body">

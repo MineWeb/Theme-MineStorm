@@ -536,6 +536,20 @@
 	margin-bottom:5px;
 }
 
+.fb:hover {
+	background-color: #293d69;
+	border-bottom: 4px solid #213154;
+}
+
+.fb:active {
+	background-color: #293d69;
+	border-bottom: 0px;
+}
+
+.fb:active > a > .social__fb{
+	border-bottom: 0px;
+}
+
 .twitter {
 	width:100%;
 	height:50px;
@@ -544,6 +558,21 @@
 	border-bottom:4px solid #3e7dad;
 	margin-bottom:5px;
 }
+
+.twitter:hover {
+	background-color: #3c79a7;
+	border-bottom: 4px solid #2c5879;
+}
+
+.twitter:active {
+	background-color: #3c79a7;
+	border-bottom: 0px;
+}
+
+.twitter:active > a > .social__twt{
+	border-bottom: 0px;
+}
+
 .youtube {
 	width:100%;
 	height:50px;
@@ -552,6 +581,23 @@
 	border-bottom:4px solid #c94335;
 	margin-bottom:5px;
 }
+
+.youtube:hover {
+	background-color: #c0392b;
+	border-bottom: 4px solid #a02f24;
+}
+
+.youtube:active {
+	background-color: #c0392b;
+	border-bottom: 0px;
+}
+
+.youtube:active > a > .social__yt{
+	border-bottom: 0px;
+}
+
+
+
 #logo__social {
 	color:#fff;
 	font-size:29px;
@@ -602,7 +648,7 @@
 }
 
 .desc__social {
-	padding:5px 0 0 0;
+	padding: 8px 0 0 0;
 	color:#fff;
 	text-align:left;
 	font-size:12px;
@@ -883,6 +929,10 @@ footer {
     width: auto;
     padding: 10px;
     margin-right: 700px;
+}
+
+.server-ip{
+	font-size: 26px;
 }
 
 
