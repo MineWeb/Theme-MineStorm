@@ -85,10 +85,6 @@
                                 });
                             </script>
 
-                            <div class="form-group">
-                                <label for="favicon"><?= $Lang->get('THEME__FAVICON_URL') ?></label>
-                                <input id="favicon" type="text" class="form-control" name="favicon_url" value="<?= $config['favicon_url'] ?>" />
-                            </div>
                             <input name="data[_Token][key]" value="<?= $csrfToken ?>" type="hidden">
                             
                             <button class="btn btn-primary" type="submit"><?= $Lang->get('GLOBAL__SUBMIT') ?></button>
